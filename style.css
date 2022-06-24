@@ -1,0 +1,30 @@
+*{
+    margin:0;
+}
+.header{
+    grid-area: header;
+    background-color: #14532D;
+    display: flex;
+    justify-content: center;
+}
+.head-text{
+    margin-top: 2vh;
+    font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #C4B5FD;
+}
+.main{
+    grid-area: main;
+    background-color: #DCFCE7;
+}
+.footer{
+    grid-area: footer;
+}
+.container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20vh 70vh 10vh;
+    grid-template-areas: "header header"
+    "main main"
+    "footer footer";
+}
