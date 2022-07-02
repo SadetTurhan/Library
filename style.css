@@ -28,3 +28,40 @@
     "main main"
     "footer footer";
 }
+
+.main{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 100vh 100vh; 
+    grid-template-areas: "form-heading books-heading"
+    "form books";
+}
+
+.form-heading{
+    grid-area: form-heading;
+}
+.books-heading{
+    grid-area:books-heading;
+}
+.form{
+    grid-area: form;
+}
+.books{
+    grid-area: books;
+}
+
+#add-book{
+    margin-left: 2vh;
+}
+
+.submit-button{
+    margin-left: 2vh;
+}
+
+.add-book-button{
+    margin-left: 2vh;
+}
+
+h1{
+    margin-left: 2vh;
+}

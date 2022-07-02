@@ -13,11 +13,56 @@
             <div class="head-text"><b>Welcome to our bookstore!</b><br>We are making a list of the books you read, so please give us some information.</div>
 
         </div>
-        <div class="main"></div>
+        <div class="main">
+            <div class="form-heading">
+                <h1>Add new book to the library</h1>
+                <hr>
+            </div>
+        <div class="form">
+            <button class="add-book-button">Add a book</button>
+            <div id="add-book-form"></div>
+            <form id="add-book">
+                <div>
+                <label for="title"></label>
+                Title
+                <input type="text" id="Title" name="Title">
+                </div>
+                <div>
+                <label for="author"></label>
+                Author
+                <input type="text" id="Author" name="Author">
+                </div>
+                <div>
+                <label for="pages"></label>
+                </div>
+                <div>
+                Page no:
+                <input type="text" id="Pages" name="Pages">
+            </div>
+                Did you read it?
+                <select id="Read" , name="Read">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                <button type="reset" class="reset-button">Reset Form</button>
+            </form>
+            
+        </div>
+        <div>
+            <button type="submit" class="submit-button">Submit your book</button>
+            </div>
+        <div class="books"></div>
+        <div class="books-heading">
+            <h1>Current books in the library</h1>
+            <hr>
+        </div>
+    </div>
+
         <div class="footer">
             <div>This is made for a project on <a href="https://www.theodinproject.com/lessons/node-path-javascript-library">The Odin Project</a></div>
             <div>Also you can visit my <a href="https://github.com/SadetTurhan">GitHub page</a></div>
         </div>
     </div>
 </body>
+<script src="app.js"></script>
 </html>
