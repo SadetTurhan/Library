@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-;
+    margin:0;
+    margin-right: 2em;
 }
 header{
     display: flex;
@@ -57,7 +57,7 @@ button{
     height:6em;
     margin-top: 2em;
     border-radius: 6% 12% 12% 12%;
-    margin-left: 24em;
+    margin-left: 22em;
     text-align: center;
     display: inline-block;
 }
