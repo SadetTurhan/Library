@@ -25,9 +25,10 @@ addBookToLibrary()
 function showbook() {
     addbutton.addEventListener('click', (event) => {
         const newDiv = document.createElement("div");
+        newDiv.setAttribute('id','newbook');
      const newContent = document.createTextNode(myLibrary);
      newDiv.append(newContent);
-    const currentDiv = document.getElementById("div1");
+    const currentDiv = document.getElementById("newbook");
     document.body.insertBefore(newDiv, currentDiv);
     })
 }
