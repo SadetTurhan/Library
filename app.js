@@ -7,40 +7,57 @@ function Book(title,author,pages,read){
   this.read = read
 };
 
+
+
 function addBookToLibrary(Book){
   myLibrary.pop();
   myLibrary.pop();
   myLibrary.pop();
   myLibrary.pop();
+  var bookName = document.getElementById("name_of_book").value;
+  var bookAuthor = document.getElementById("author_of_book").value;
+  var bookPages = document.getElementById("page_number").value;
+  var bookRead = document.getElementById("items4");
   myLibrary.push(bookName,bookAuthor,bookPages,bookRead);
 };
 
 
+
 function addCard(){
-    let card = document.createElement("div");
-    let cardName = document.createElement("p");
-    cardName.innerText = document.getElementById("name_of_book").value;
-    let cardAuthor = document.createElement("p");
-    cardAuthor.innerText = document.getElementById("author_of_book").value;
-    let cardPage = document.createElement("p");
-    cardPage.innerText = document.getElementById("page_number").value;
-    let cardRead = document.createElement("p");
-    if(cardRead == "on"){
-        cardRead.innerText = "has been read";
-    }else{
-        cardRead.innerText = "has not been read";
-    }
-    card.appendChild(cardName);
-    card.appendChild(cardAuthor);
-    card.appendChild(cardPage);
-    card.appendChild(cardRead);
-    document.body.appendChild(card);
+  let card = document.createElement("div");
+  let cardName = document.createElement("p");
+  cardName.innerText = document.getElementById("name_of_book").value;
+  cardName.setAttribute("id","items1");
+  let cardAuthor = document.createElement("p");
+  cardAuthor.innerText = document.getElementById("author_of_book").value;
+  cardAuthor.setAttribute("id","items2");
+  let cardPage = document.createElement("p");
+  cardPage.innerText = document.getElementById("page_number").value;
+  cardPage.setAttribute("id","items3");
+  let cardRead = document.createElement("p");
+  cardRead.innerText = document.getElementById("read_status").value;
+  if(cardRead == "on"){
+      cardRead.innerText = "has been read";
+  }else{
+      cardRead.innerText = "has not been read";
+  }
+  cardRead.setAttribute("id","items4");
+  card.appendChild(cardName);
+  card.appendChild(cardAuthor);
+  card.appendChild(cardPage);
+  card.appendChild(cardRead);
+  document.body.appendChild(card);
+  let deleteButton = document.createElement("button");
+  deleteButton.classList.add("deleteButton");
+  deleteButton.innerText = "delete";
+  card.appendChild(deleteButton);
+function deleteBook(){
+  card.remove();
+}
+  deleteButton.addEventListener("click",deleteBook);
 };
-
-
 
 
 let addButton = document.getElementById("addButton");
 addButton.addEventListener("click", addBookToLibrary);
 addButton.addEventListener("click",addCard);
-
