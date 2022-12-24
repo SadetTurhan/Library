@@ -1,4 +1,73 @@
+
+body{
+    background-color: #f1f5f9;
+}
+
 .deleteButton{
     width: 50px;
     height: 50px;
+}
+header{
+    text-align: center;
+    background-color: #e2e8f0;
+}
+.addButton{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+.infoArea{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+    background-color: #e2e8f0;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-between;
+    align-items: center;
+}
+input{
+    width: 200px;
+    height: 20px;
+    text-align: end;
+}
+.card{
+    border: 2px solid black;
+    width: 200px;
+    margin-top: 3%;
+    text-align: center;
+    background-color:  #e2e8f0;
+    margin: 50px;
+}
+
+#cardArea{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+#items1{
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#items2{
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#items3{
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#items4{
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

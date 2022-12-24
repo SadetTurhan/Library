@@ -25,6 +25,7 @@ function addBookToLibrary(Book){
 
 function addCard(){
   let card = document.createElement("div");
+  card.classList.add("card");
   let cardName = document.createElement("p");
   cardName.innerText = document.getElementById("name_of_book").value;
   cardName.setAttribute("id","items1");
@@ -32,7 +33,7 @@ function addCard(){
   cardAuthor.innerText = document.getElementById("author_of_book").value;
   cardAuthor.setAttribute("id","items2");
   let cardPage = document.createElement("p");
-  cardPage.innerText = document.getElementById("page_number").value;
+  cardPage.innerText = document.getElementById("page_number").value + " pages";
   cardPage.setAttribute("id","items3");
   let cardRead = document.createElement("p");
   cardRead.innerText = document.getElementById("read_status").value;
@@ -42,11 +43,16 @@ function addCard(){
       cardRead.innerText = "has not been read";
   }
   cardRead.setAttribute("id","items4");
+  
   card.appendChild(cardName);
   card.appendChild(cardAuthor);
   card.appendChild(cardPage);
   card.appendChild(cardRead);
+  let cardArea = document.getElementById("cardArea");
   document.body.appendChild(card);
+  cardArea.appendChild(card);
+  
+  
   let deleteButton = document.createElement("button");
   deleteButton.classList.add("deleteButton");
   deleteButton.innerText = "delete";

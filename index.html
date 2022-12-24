@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome! This is a Library!</h1>
+        <h1>Welcome!<br> This is a Library!</h1>
         <h3>You may add the books you liked!</h3>
+        <hr>
     </header>
     <main>
-        name<input type="text" id="name_of_book">
-        author<input type="text" id="author_of_book">
-        pageno<input type="text" id="page_number">
-        read<input type="checkbox" id="read_status" class="read_status">
+        <div class="infoArea">
+        Book name<input type="text" id="name_of_book">
+        Author name<input type="text" id="author_of_book">
+        Page Number<input type="text" id="page_number">
+        Did you read it?<input type="checkbox" id="read_status" class="read_status">
         <br>
-        <button id="addButton" class="addButton">add</button>
+        <button id="addButton" class="addButton">add your book</button>
+        <hr>
+        </div>
+        <div class="cardArea" id="cardArea"></div>
     </main>
     <footer>
 
