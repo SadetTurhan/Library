@@ -1,49 +1,40 @@
 let myLibrary = [];
 
+
 function Book(title,author,pages,read){
-  this.title = title,
-  this.author = author,
-  this.pages = pages,
-  this.read = read
-};
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+ };
+function addBookToLibrary(title,author,pages,read){
+  var title = document.getElementById("name_of_book").value;
+  var author = document.getElementById("author_of_book").value;
+  var pages = document.getElementById("page_number").value;
+  var read = document.getElementById("read_status").checked;
+  const book = new Book(title,author,pages,read);
+  myLibrary.push(book);
+}
 
-
-
-function addBookToLibrary(Book){
-  myLibrary.pop();
-  myLibrary.pop();
-  myLibrary.pop();
-  myLibrary.pop();
-  var bookName = document.getElementById("name_of_book").value;
-  var bookAuthor = document.getElementById("author_of_book").value;
-  var bookPages = document.getElementById("page_number").value;
-  var bookRead = document.getElementById("items4");
-  myLibrary.push(bookName,bookAuthor,bookPages,bookRead);
-};
-
-
-
-function addCard(){
+  function addCard(){
   let card = document.createElement("div");
   card.classList.add("card");
   let cardName = document.createElement("p");
-  cardName.innerText = document.getElementById("name_of_book").value;
+  cardName.innerText = myLibrary.slice(-1)[0].title;
   cardName.setAttribute("id","items1");
   let cardAuthor = document.createElement("p");
-  cardAuthor.innerText = document.getElementById("author_of_book").value;
+  cardAuthor.innerText = myLibrary.slice(-1)[0].author;
   cardAuthor.setAttribute("id","items2");
   let cardPage = document.createElement("p");
-  cardPage.innerText = document.getElementById("page_number").value + " pages";
-  cardPage.setAttribute("id","items3");
+  cardPage.innerText = myLibrary.slice(-1)[0].pages;
   let cardRead = document.createElement("p");
-  cardRead.innerText = document.getElementById("read_status").value;
-  if(cardRead == "on"){
-      cardRead.innerText = "has been read";
+  cardPage.setAttribute("id","items3");
+  if(myLibrary.slice(-1)[0].read === true){
+    cardRead.innerText = "Has been read";
   }else{
-      cardRead.innerText = "has not been read";
-  }
+    cardRead.innerText = "Has not been read";
+  };
   cardRead.setAttribute("id","items4");
-  
   card.appendChild(cardName);
   card.appendChild(cardAuthor);
   card.appendChild(cardPage);
@@ -63,7 +54,7 @@ function deleteBook(){
   deleteButton.addEventListener("click",deleteBook);
 };
 
-
 let addButton = document.getElementById("addButton");
 addButton.addEventListener("click", addBookToLibrary);
 addButton.addEventListener("click",addCard);
+
