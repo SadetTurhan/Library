@@ -22,10 +22,24 @@ function createCard(){
   displayPages.innerText = myLibrary[0].pages;
   const displayRead = document.createElement("p");
   displayRead.innerText = myLibrary[0].read;
+  const deleteButton = document.createElement("button");
+  deleteButton.setAttribute("id","deleteButton");
+  deleteButton.innerText = "delete";
+  function removeCard(){
+    displayTitle.remove()
+    displayAuthor.remove()
+    displayPages.remove()
+    displayRead.remove()
+    this.remove();
+    myLibrary.pop(this)
+  }
+  deleteButton.addEventListener("click",removeCard)
+  bookArea.classList.add("bookArea")
   bookArea.appendChild(displayTitle);
   bookArea.appendChild(displayAuthor);
   bookArea.appendChild(displayPages);
   bookArea.appendChild(displayRead);
+  bookArea.appendChild(deleteButton);
 }
 
 
