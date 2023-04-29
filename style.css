@@ -1,7 +1,9 @@
 *{
     margin: 0;
 }
-
+.addButton{
+    background-color: green;
+}
 .inputArea, .addButton,h1{
     display: flex;
     flex-direction: column;
@@ -12,7 +14,14 @@
 
 .bookArea{
     display: flex;
+    flex-flow: wrap;
     justify-content: flex-start;
     align-items: flex-start;
 }
-
+.cardArea{
+    border: solid 2px black;
+    width: 16%;
+    height: 20%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
