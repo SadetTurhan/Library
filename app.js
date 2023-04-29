@@ -14,6 +14,8 @@ function addBookToLibrary(){
 };
 function createCard(){
   const bookArea = document.getElementById("bookArea");
+  const cardArea = document.createElement("div");
+  cardArea.classList.add("cardArea");
   const displayTitle = document.createElement("p");
   displayTitle.innerText = myLibrary[0].title;
   const displayAuthor = document.createElement("p");
@@ -35,11 +37,12 @@ function createCard(){
   }
   deleteButton.addEventListener("click",removeCard)
   bookArea.classList.add("bookArea")
-  bookArea.appendChild(displayTitle);
-  bookArea.appendChild(displayAuthor);
-  bookArea.appendChild(displayPages);
-  bookArea.appendChild(displayRead);
-  bookArea.appendChild(deleteButton);
+  cardArea.appendChild(displayTitle);
+  cardArea.appendChild(displayAuthor);
+  cardArea.appendChild(displayPages);
+  cardArea.appendChild(displayRead);
+  cardArea.appendChild(deleteButton);
+  bookArea.appendChild(cardArea);
 }
 
 
