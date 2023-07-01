@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Library App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<header>
-<h1>Welcome to the Library</h1>
-</header>
+  <h1>My Library</h1>
+  <button id="new-book-btn">New Book</button>
 
-<main>
-<div class="inputArea">
-Name of the book<input id="nameOfBook"></input>
-Author of the book<input id="authorOfBook"></input>
-Pages of the book<input id="pagesOfBook"></input>
-Did you read it?<input id="readBook"></input>
-</div>
-<button id="addButton" class="addButton">Add book</button>
-<div class="bookArea" id="bookArea"></div>
-</main>
-<footer>
+  <div id="new-book-form" class="hidden">
+    <h2>Add a New Book</h2>
+    <form id="book-form">
+      <label for="title">Title:</label>
+      <input type="text" id="title" required><br>
 
-</footer>
+      <label for="author">Author:</label>
+      <input type="text" id="author" required><br>
 
+      <label for="pages">Number of Pages:</label>
+      <input type="number" id="pages" required><br>
 
-<script src="app.js"></script>
+      <label for="read">Read:</label>
+      <input type="checkbox" id="read"><br>
+
+      <button type="submit">Add Book</button>
+    </form>
+    <div id="book-list"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>

@@ -1,51 +1,67 @@
-let myLibrary = []
+let myLibrary = [];
 
-function Book(title,author, pages,read) {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
-};
-
-function addBookToLibrary(){
-  const newBook = new Book(document.getElementById('nameOfBook').value,document.getElementById('authorOfBook').value,document.getElementById('pagesOfBook').value,document.getElementById('readBook').value);
-  myLibrary.unshift(newBook);
-  console.log(myLibrary);
-};
-function createCard(){
-  const bookArea = document.getElementById("bookArea");
-  const cardArea = document.createElement("div");
-  cardArea.classList.add("cardArea");
-  const displayTitle = document.createElement("p");
-  displayTitle.innerText = myLibrary[0].title;
-  const displayAuthor = document.createElement("p");
-  displayAuthor.innerText = myLibrary[0].author;
-  const displayPages = document.createElement("p");
-  displayPages.innerText = myLibrary[0].pages;
-  const displayRead = document.createElement("p");
-  displayRead.innerText = myLibrary[0].read;
-  const deleteButton = document.createElement("button");
-  deleteButton.setAttribute("id","deleteButton");
-  deleteButton.innerText = "delete";
-  function removeCard(){
-    displayTitle.remove()
-    displayAuthor.remove()
-    displayPages.remove()
-    displayRead.remove()
-    this.remove();
-    myLibrary.pop(this)
-  }
-  deleteButton.addEventListener("click",removeCard)
-  bookArea.classList.add("bookArea")
-  cardArea.appendChild(displayTitle);
-  cardArea.appendChild(displayAuthor);
-  cardArea.appendChild(displayPages);
-  cardArea.appendChild(displayRead);
-  cardArea.appendChild(deleteButton);
-  bookArea.appendChild(cardArea);
 }
 
+function addBookToLibrary() {
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const pages = document.getElementById('pages').value;
+  const read = document.getElementById('read').checked;
 
-const addButton = document.getElementById('addButton');
-addButton.addEventListener('click',addBookToLibrary);
-addButton.addEventListener("click",createCard);
+  const book = new Book(title, author, pages, read);
+  myLibrary.push(book);
+
+  // Clear form inputs
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
+  document.getElementById('pages').value = '';
+  document.getElementById('read').checked = false;
+
+  displayBooks();
+}
+
+function displayBooks() {
+  const bookList = document.getElementById('book-list');
+  bookList.innerHTML = '';
+
+  for (let i = 0; i < myLibrary.length; i++) {
+    const book = myLibrary[i];
+    const bookCard = document.createElement('div');
+    bookCard.classList.add('book-card');
+    bookCard.innerHTML = `
+      <h3>${book.title}</h3>
+      <p>Author: ${book.author}</p>
+      <p>Pages: ${book.pages}</p>
+      <p>Read: ${book.read ? 'Yes' : 'No'}</p>
+      <button onclick="removeBook(${i})">Remove</button>
+      <button onclick="toggleRead(${i})">Toggle Read</button>
+    `;
+
+    bookList.appendChild(bookCard);
+  }
+}
+
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  displayBooks();
+}
+
+function toggleRead(index) {
+  myLibrary[index].read = !myLibrary[index].read;
+  displayBooks();
+}
+
+document.getElementById('new-book-btn').addEventListener('click', function() {
+  const form = document.getElementById('new-book-form');
+  form.classList.toggle('hidden');
+});
+
+document.getElementById('book-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  addBookToLibrary();
+});
