@@ -15,8 +15,6 @@ function addBookToLibrary() {
 
   const book = new Book(title, author, pages, read);
   myLibrary.push(book);
-
-  // Clear form inputs
   document.getElementById('title').value = '';
   document.getElementById('author').value = '';
   document.getElementById('pages').value = '';
@@ -39,7 +37,7 @@ function displayBooks() {
       <p>Pages: ${book.pages}</p>
       <p>Read: ${book.read ? 'Yes' : 'No'}</p>
       <button onclick="removeBook(${i})">Remove</button>
-      <button onclick="toggleRead(${i})">Toggle Read</button>
+      <button onclick="toggleRead(${i})">Read</button>
     `;
 
     bookList.appendChild(bookCard);

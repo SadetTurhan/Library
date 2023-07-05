@@ -2,9 +2,14 @@
     display: none;
   }
   
-  .book-card {
-    border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
+.book-card {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 10px 10px 10px;
+}
+.book-list{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 25px;
+}
