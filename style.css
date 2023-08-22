@@ -13,3 +13,13 @@
   flex-wrap: wrap;
   margin: 25px;
 }
+.head-text{
+  text-align: center;
+}
+.book-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 44%;
+}

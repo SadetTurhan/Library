@@ -54,10 +54,6 @@ function toggleRead(index) {
   displayBooks();
 }
 
-document.getElementById('new-book-btn').addEventListener('click', function() {
-  const form = document.getElementById('new-book-form');
-  form.classList.toggle('hidden');
-});
 
 document.getElementById('book-form').addEventListener('submit', function(event) {
   event.preventDefault();
